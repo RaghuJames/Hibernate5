@@ -12,5 +12,8 @@
     <servlet-mapping>
         <servlet-name>action</servlet-name>
         <url-pattern>*.htm</url-pattern>
-    </servlet-mapping>    
+    </servlet-mapping>   
+    <listener>
+    	<listener-class>com.hib.web.ApplicationContextListener</listener-class>
+    </listener> 
 </web-app>
