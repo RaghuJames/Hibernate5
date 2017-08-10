@@ -1,28 +1,27 @@
 <!DOCTYPE html>
+<%@ include file="/taglibs.jsp"%>
 <style>
 	body{
 		background-color: #21447c;
-	}
-	#loginDiv{
-		background-color: #b0f95c;
-		width: 400px;
-        height: 300px;
-
-        position: absolute;
-        top:0;
-        bottom: 0;
-        left: 0;
-         right: 0;
-        margin: auto;
-        display: flex;
-	}
+	
 </style>
-
-<div id="loginDiv">
+<springForm:form name="loginForm" commandName="user" method="post" action="login.htm">
 	<table>
-		<tr>
-			<td><input type="text" placeholder="UserName" style="border-radius: 10px;"> </td> 
-		</tr>
-		<tr> </tr>
-	</table>
-</div>
+	<tr>
+    <th>UserCode</th>
+    <th><springForm:input path="userId" size="15"/> </th>
+  </tr>
+  <tr>
+    <th>UserName</th>
+    <th><springForm:input path="userName" size="15"/> </th>
+  </tr>
+   <tr>
+    <th>Password</th>
+    <th><springForm:password path="password" size="15"/> </th>
+  </tr>
+  <tr>
+   <td><input type="submit"> </td>
+  </tr>
+</table>
+
+</springForm:form>
