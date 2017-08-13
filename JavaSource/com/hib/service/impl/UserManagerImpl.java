@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.hib.dao.UserDAO;
+import com.hib.model.Accounts;
 import com.hib.model.User;
 import com.hib.service.UserManager;
 
@@ -19,6 +20,12 @@ public class UserManagerImpl implements UserManager {
 	@Override
 	public void saveUser(User user) {
 		this.userDAO.saveUser(user);
+		
+	}
+
+	@Override
+	public void saveAccounts(Accounts act) {
+		this.userDAO.saveAccounts(act);
 		
 	}
 

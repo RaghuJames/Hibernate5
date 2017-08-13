@@ -6,4 +6,7 @@
 <tiles-definitions>
 	<definition name="login" template="/login.jsp">
 	</definition>
+	
+	<definition name="account" template="/account.jsp">
+	</definition>
 </tiles-definitions>

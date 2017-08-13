@@ -2,6 +2,8 @@ package com.hib.model;
 
 import java.util.Date;
 
+import javax.persistence.Embeddable;
+@Embeddable
 public class CommonModel {
 	
 	private String branchCode;
