@@ -1,10 +1,13 @@
 package com.hib.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -60,5 +63,16 @@ public class Accounts implements Serializable{
 
 	public void setCommonModel(CommonModel commonModel) {
 		this.commonModel = commonModel;
+	}
+	
+	@ElementCollection
+	List<Accounts> accountList = new ArrayList<Accounts>();
+
+	public List<Accounts> getAccountList() {
+		return accountList;
+	}
+
+	public void setAccountList(List<Accounts> accountList) {
+		this.accountList = accountList;
 	}
 }

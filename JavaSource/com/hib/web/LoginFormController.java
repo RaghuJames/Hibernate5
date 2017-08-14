@@ -28,6 +28,11 @@ public class LoginFormController {
 	private String onSubmit(@ModelAttribute("user")User user){
 		this.userManager.saveUser(user);
 		System.out.println("===SUBMIT===");
+		return "redirect:/accounts.htm";
+	}
+	private String saveAccount(@ModelAttribute("user")User user){
+		this.userManager.saveUser(user);
+		System.out.println("===SUBMIT===");
 		return "login";
 	}
 }

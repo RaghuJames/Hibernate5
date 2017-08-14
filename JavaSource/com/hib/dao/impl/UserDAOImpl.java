@@ -7,6 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.hib.dao.UserDAO;
 import com.hib.model.Accounts;
+import com.hib.model.CommonModel;
 import com.hib.model.User;
 
 @Transactional
@@ -26,8 +27,17 @@ public class UserDAOImpl implements UserDAO {
 	}
 	@Override
 	public void saveAccounts(Accounts act) {
-		System.out.println("==="+act.getCommonModel().getBranchCode()+"=="+act.getCommonModel().getAuditDate()+"==="+act.getCommonModel().getModuleId()+"=="+act.getAcctCode());
 		sessionFactory.getCurrentSession().save(act);
+		act.getAccountList().forEach((l) ->{
+			CommonModel m = new CommonModel();
+			m.setBranchCode(act.getCommonModel().getBranchCode());
+			m.setAuditDate(act.getCommonModel().getAuditDate());
+			m.setModuleId(act.getCommonModel().getModuleId());
+			l.setCommonModel(m);
+			sessionFactory.getCurrentSession().save(l);
+		});
+		
+		
 		
 	}
 

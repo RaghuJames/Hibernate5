@@ -19,7 +19,7 @@ public class ApplicationContextListener implements ServletContextListener {
 
 	@Override
 	public void contextInitialized(ServletContextEvent arg0) {
-		Connection con= null;
+	/*	Connection con= null;
 		try{
 		Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");  
 		con=DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=Hibernate;integratedSecurity=false;","SA","Ncs@2017");  
@@ -33,7 +33,7 @@ public class ApplicationContextListener implements ServletContextListener {
 				e.printStackTrace();
 			}
 			
-		}
+		}*/
 		} 
 
 		// TODO Auto-generated method stub

@@ -1,7 +1,9 @@
 package com.hib.web;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
@@ -30,7 +32,13 @@ public class AccountFormController {
 	@RequestMapping(value="/accounts.htm",method=RequestMethod.GET)
 	private String formBack(ModelMap map){
 		Accounts act= new Accounts();
+		List<Accounts> list = new ArrayList<Accounts>();
+		list.add(new Accounts());
+		list.add(new Accounts());
+		list.add(new Accounts());
 		map.put("accountModel", act);
+		System.out.println("======list======"+list.size());
+		map.put("accountList", list);
 		return "account";
 	}
 	@RequestMapping(value="/accounts.htm",method=RequestMethod.POST)
